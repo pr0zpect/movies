@@ -13,3 +13,14 @@ const defaultMovies = [
 
 let movies = [];
 let currentMovies = [];
+
+async function fetchApi(x) {
+    const url = `https://www.omdbapi.com/?s=${x}&apikey=48aa168d`;
+    try {
+        let res = await fetch(url);
+        let data = await res.json();
+        movies = data.Search || [];
+    } catch (e) {
+        console.log(e);
+    }
+}
