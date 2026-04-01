@@ -56,10 +56,6 @@ A sleek and modern **Movie Watchlist Web App** built using **HTML, CSS, JavaScri
 
   * OMDb API → Movie search data
     https://www.omdbapi.com/
-  * TMDB API → (Optional enhancements like detailed metadata)
-    https://developer.themoviedb.org/docs/getting-started
-  * Watchmode API → (Optional streaming availability info)
-    https://api.watchmode.com/
 
 ---
 
