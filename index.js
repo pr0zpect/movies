@@ -24,3 +24,14 @@ async function fetchApi(x) {
         console.log(e);
     }
 }
+
+function displayMovies(moviesList) {
+    const results = document.getElementById("results");
+    if (!results) return;
+    results.innerHTML = "";
+    if (!moviesList || moviesList.length === 0) {
+        results.innerText = "No results found";
+        return;
+    }
+    // Rendering logic placeholder
+}
