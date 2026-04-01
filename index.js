@@ -50,4 +50,4 @@ function displayMovies(movies) {
     });
 }
 
-fetchApi("batman");
+fetchApi();
