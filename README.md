@@ -30,11 +30,13 @@ Always visible while browsing
 🎲 Random Movie Night
 Picks a random movie from the watchlist
 Helps users decide what to watch
+
 🎨 UI/UX Design
 Dark theme inspired by Disney+ / HBO Max
 Clean and modern layout
 Responsive design
 Smooth hover and transition effects
+
 🛠️ Technologies Used
 Frontend: HTML, CSS, JavaScript
 API Handling: Fetch API / Axios
