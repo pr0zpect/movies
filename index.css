@@ -1,11 +1,403 @@
-body {
-    font-family: 'Inter', sans-serif;
+
+* {
     margin: 0;
-    padding: 20px;
-    background-color: #f5f5f5;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-#app {
-    max-width: 1200px;
-    margin: 0 auto;
+body {
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background-image: url('abstract-white-and-silver-are-light-pattern-gray-with-the-gradient-is-the-with-floor-wall-metal-texture-soft-tech-diagonal-background-black-dark-clean-modern-photo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #111;
+    padding: 0;
+    min-height: 100vh;
+    transition: background-color 0.35s ease, color 0.35s ease, background-image 0.35s ease;
+    background-color: #edf2f7;
+}
+
+body.dark-mode {
+    background-image: url('glossy-black-gradient-backdrop-png_46C.webp');
+    background-color: #0d0d0d;
+    color: #f8f9fa;
+}
+
+#header {
+    display: grid;
+    gap: 16px;
+    padding: 20px 36px 14px;
+    background: rgba(255, 255, 255, 0.78);
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+    backdrop-filter: blur(16px);
+    color: #111;
+    box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.header-bottom {
+    width: 100%;
+}
+
+body.dark-mode #header {
+    background: rgba(10, 10, 10, 0.82);
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+    color: #f8f9fa;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.brand-row {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.header-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.brand-name {
+    font-size: 1.7rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.brand-tag {
+    font-size: 0.95rem;
+    color: #5b6b7c;
+}
+
+body.dark-mode .brand-tag {
+    color: #a8adb0;
+}
+
+#toggle-theme {
+    padding: 12px 18px;
+    font-size: 0.95rem;
+    color: #111;
+    background-color: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(15, 23, 42, 0.1);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.2s ease, border-color 0.25s ease;
+}
+
+#toggle-theme:hover {
+    background-color: rgba(255, 255, 255, 1);
+    transform: translateY(-1px);
+}
+
+body.dark-mode #toggle-theme {
+    color: #f8f9fa;
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+
+.sort-group,
+.year-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 160px;
+}
+
+.sort-group label {
+    font-size: 0.9rem;
+    color: #5b6b7c;
+}
+
+.sort-group select {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(15, 23, 42, 0.1);
+    background: rgba(241, 245, 249, 0.95);
+    color: #111;
+}
+
+body.dark-mode .sort-group select {
+    background: rgba(255, 255, 255, 0.08);
+    color: #f8f9fa;
+    border-color: rgba(255, 255, 255, 0.18);
+}
+
+.search-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+#search-input {
+    flex: 1 1 320px;
+    min-width: 240px;
+    padding: 16px 18px;
+    border-radius: 999px;
+    border: none;
+    background: rgba(241, 245, 249, 0.95);
+    color: #111;
+    box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.06);
+}
+
+#search-input::placeholder {
+    color: #7a7f84;
+}
+
+#search-input:focus {
+    outline: none;
+    box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.16), 0 0 0 4px rgba(245, 197, 24, 0.12);
+}
+
+.year-group input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(15, 23, 42, 0.1);
+    background: rgba(241, 245, 249, 0.95);
+    color: #111;
+}
+
+body.dark-mode .year-group input {
+    background: rgba(255, 255, 255, 0.08);
+    color: #f8f9fa;
+    border-color: rgba(255, 255, 255, 0.16);
+}
+
+body.dark-mode #search-input {
+    background: rgba(255, 255, 255, 0.08);
+    color: #f8f9fa;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
+#search {
+    padding: 14px 26px;
+    border-radius: 999px;
+    border: none;
+    background-color: #111;
+    color: #f8f9fa;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 12px 26px rgba(15, 23, 42, 0.18);
+}
+
+#search:hover {
+    background-color: #1a1a1a;
+}
+
+body.dark-mode #search {
+    background-color: #f5c518;
+    color: #111;
+    box-shadow: 0 12px 30px rgba(245, 197, 24, 0.22);
+}
+
+.secondary-btn {
+    padding: 12px 18px;
+    font-size: 0.95rem;
+    border-radius: 999px;
+    border: 1px solid rgba(15, 23, 42, 0.15);
+    background: rgba(255, 255, 255, 0.92);
+    color: #111;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.25s ease;
+}
+
+.secondary-btn:hover {
+    background-color: rgba(255, 255, 255, 1);
+    transform: translateY(-1px);
+}
+
+body.dark-mode .secondary-btn {
+    background: rgba(255, 255, 255, 0.08);
+    color: #f8f9fa;
+    border-color: rgba(255, 255, 255, 0.18);
+}
+
+.filter-row {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.filter-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 180px;
+}
+
+.filter-item label {
+    color: #555;
+    font-size: 0.9rem;
+}
+
+body.dark-mode .filter-item label {
+    color: #a8adb0;
+}
+
+#sort-select,
+#filter-year {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    background: rgba(255, 255, 255, 0.95);
+    color: #111;
+}
+
+body.dark-mode #sort-select,
+body.dark-mode #filter-year {
+    background: rgba(255, 255, 255, 0.08);
+    color: #f8f9fa;
+    border-color: rgba(255, 255, 255, 0.16);
+}
+
+#sort-select:hover,
+#filter-year:hover {
+    border-color: rgba(0, 0, 0, 0.28);
+}
+
+body.dark-mode #sort-select:hover,
+body.dark-mode #filter-year:hover {
+    border-color: rgba(255, 255, 255, 0.28);
+}
+
+
+#results {
+    max-width: 980px;
+    margin: 32px auto 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 22px;
+    padding: 0 20px 20px;
+}
+
+.movie-poster {
+    background-color: rgba(255, 255, 255, 0.99);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 24px;
+    padding: 18px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+}
+
+.movie-poster:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 30px 70px rgba(15, 23, 42, 0.12);
+    border-color: rgba(245, 197, 24, 0.35);
+}
+
+body.dark-mode .movie-poster {
+    background-color: rgba(18, 18, 18, 0.95);
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.24);
+}
+
+body.dark-mode .movie-poster h3 {
+    color: #f8f9fa;
+}
+
+body.dark-mode .movie-poster p {
+    color: #d1d5db;
+}
+
+.movie-poster h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #111;
+}
+
+.movie-poster p {
+    margin: 0;
+    font-size: 0.92rem;
+    color: #4f5666;
+}
+
+.movie-poster img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+.favorite-btn {
+    padding: 10px 18px;
+    font-size: 0.95rem;
+    background-color: #111;
+    color: #f8f9fa;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    margin-top: auto;
+    align-self: flex-start;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.favorite-btn:hover {
+    background-color: #222;
+    transform: translateY(-1px);
+}
+
+body.dark-mode .favorite-btn {
+    background-color: #f5c518;
+    color: #111;
+}
+
+body.dark-mode .favorite-btn:hover {
+    background-color: #e6b915;
+}
+
+
+.favorite-btn:hover {
+    background-color: #e6b915;
+}
+
+@media (max-width: 760px) {
+    #header {
+        padding: 18px 18px 10px;
+    }
+    .search-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    #search-input,
+    #search,
+    .sort-group,
+    .year-group {
+        width: 100%;
+    }
+    .sort-group select,
+    .year-group input {
+        width: 100%;
+    }
+}
+
+@media (max-width: 520px) {
+    #header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+        padding: 18px;
+    }
+
+    #toggle-theme {
+        align-self: flex-end;
+    }
 }

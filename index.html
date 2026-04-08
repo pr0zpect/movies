@@ -1,14 +1,46 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Search</title>
+    <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
-    <div id="app">
-        <h1>Movie Mania</h1>
+    <div id="header">
+        <div class="header-top">
+            <div class="brand-row">
+                <div class="brand-name">The Movie Mania</div>
+                <span class="brand-tag">Browse trailers & latest movies</span>
+            </div>
+            <div class="header-actions">
+                <button id="show-favorites" class="secondary-btn">My Favorites</button>
+                <button id="toggle-theme">Dark Mode</button>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <div class="search-row">
+                <input type="text" id="search-input" placeholder="Search movie...">
+                <button id="search">Search</button>
+                <div class="sort-group">
+                    <label for="sort-select">Sort</label>
+                    <select id="sort-select">
+                        <option value="title">Title</option>
+                        <option value="year">Year</option>
+                    </select>
+                </div>
+                <div class="year-group">
+                    <label for="filter-year">Year min</label>
+                    <input type="number" id="filter-year" placeholder="e.g. 2000">
+                </div>
+            </div>
+        </div>
     </div>
+
+    <div id="results"></div>
+
     <script src="index.js"></script>
 </body>
 </html>
